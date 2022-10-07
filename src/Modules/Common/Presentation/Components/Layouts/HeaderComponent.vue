@@ -1,11 +1,6 @@
 <template>
   <header
-    class="relative top-0 left-0 right-0 flex bg-gray-200 justify-between items-center px-10 py-4"
-    :ref="
-      (el) => {
-        headerRef = el;
-      }
-    "
+    class="relative top-0 left-0 right-0 flex bg-white shadow-md justify-between items-center px-10 py-4"
   >
     <nav>
       <ol class="flex gap-2">
@@ -37,10 +32,4 @@ const menus = [
     path: "/products",
   },
 ];
-
-const headerRef = ref<Element | null | any>(null);
-
-onMounted(() => {
-  console.log(headerRef.value?.clientHeight);
-});
 </script>

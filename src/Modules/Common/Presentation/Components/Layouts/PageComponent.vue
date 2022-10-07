@@ -1,11 +1,11 @@
 <template>
   <HeaderComponent :title="title" />
 
-  <main class="grow">
+  <main class="px-6 py-8">
     <slot></slot>
   </main>
 
-  <FooterComponent />
+  <!-- <FooterComponent /> -->
 </template>
 
 <script setup lang="ts">
