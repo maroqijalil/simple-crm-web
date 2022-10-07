@@ -37,6 +37,8 @@ export default class ProductsLocalStorage {
 
         return this.set(products);
       }
+
+      return this.set([product]);
     } catch (e) {
       console.log(e);
     }

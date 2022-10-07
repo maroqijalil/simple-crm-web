@@ -2,12 +2,12 @@
   <div
     class="absolute w-screen h-screen bg-blue-900/40 z-10 flex justify-center items-center"
   >
-    <div class="bg-white flex flex-col gap-2 rounded-md overflow-hidden">
+    <form class="bg-white flex flex-col gap-2 rounded-md overflow-hidden w-1/3">
       <div class="p-6 shadow-md w-full">
         <h1 class="text-xl font-medium">Add Product</h1>
       </div>
 
-      <div class="px-6 py-8">
+      <div class="px-6 py-8 flex flex-col gap-2">
         <InputLabelComponent
           label="Product Name"
           type="text"
@@ -16,22 +16,61 @@
               inputs.name = typeof value === 'string' ? value : '';
             }
           "
+          required
+        />
+
+        <InputLabelComponent
+          label="Category"
+          type="text"
+          :setValue="
+            (value) => {
+              inputs.category = typeof value === 'string' ? value : '';
+            }
+          "
+          required
+        />
+
+        <InputLabelComponent
+          label="Stock"
+          type="number"
+          :setValue="
+            (value) => {
+              inputs.stock = typeof value === 'number' ? value : 0;
+            }
+          "
+          required
+        />
+
+        <InputLabelComponent
+          label="Price"
+          type="number"
+          :setValue="
+            (value) => {
+              inputs.price = typeof value === 'number' ? value : 0;
+            }
+          "
+          required
         />
       </div>
 
       <div class="px-6 py-4 shadow-md-top flex justify-end gap-2">
         <button
-          class="px-4 py-2 hover:bg-gray-200 cursor-pointer transition-all"
+          class="px-4 py-2 hover:bg-gray-200 cursor-pointer rounded-sm transition-all"
+          type="button"
+          @click="close"
         >
           Cancel
         </button>
+
         <button
+          type="submit"
+          @click.prevent="submit"
           class="px-4 py-2 text-white rounded-sm bg-blue-500 hover:bg-blue-700 cursor-pointer transition-all"
         >
           Add
         </button>
       </div>
-    </div>
+    </form>
   </div>
 </template>
 
@@ -39,6 +78,13 @@
 import InputLabelComponent from "../Inputs/InputLabelComponent.vue";
 import { reactive, watch } from "vue";
 import type ProductModel from "@/Modules/Common/Domain/Models/ProductModel";
+import AddProduct from "@/Modules/Common/Application/UseCases/AddProduct";
+
+interface Props {
+  close: () => void;
+}
+
+defineProps<Props>();
 
 const inputs: ProductModel = reactive({
   name: "",
@@ -47,9 +93,9 @@ const inputs: ProductModel = reactive({
   price: 0,
 });
 
-watch(inputs, (value, oldvalue) => {
-  console.log(value);
-});
+const submit = () => {
+  new AddProduct().execute(inputs);
+};
 </script>
 
 <style scoped>

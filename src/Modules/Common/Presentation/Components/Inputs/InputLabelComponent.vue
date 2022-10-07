@@ -3,7 +3,8 @@
     <label>{{ label }}</label>
     <input
       :type="type"
-      class="p-2 outline outline-1 outline-blue-500 rounded-sm"
+      :required="required"
+      class="p-2 outline outline-1 outline-gray-400 focus:outline-2 focus:outline-blue-500 transition-all rounded-sm"
       v-model.lazy="value"
     />
   </div>
@@ -15,6 +16,7 @@ import { ref, watchEffect } from "vue";
 interface Props {
   label: string;
   type: string;
+  required: boolean;
   setValue: (value: string | number | undefined) => void;
 }
 
