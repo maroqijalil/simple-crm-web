@@ -1,7 +1,7 @@
 <template>
   <HeaderComponent :title="title" />
 
-  <main class="px-6 py-8">
+  <main class="px-6 pt-8">
     <slot></slot>
   </main>
 

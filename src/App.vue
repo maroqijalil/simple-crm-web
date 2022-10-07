@@ -9,8 +9,6 @@ import { RouterView } from "vue-router";
 <style>
 #app {
   height: 100vh;
-  display: flex;
-  flex-direction: column;
   overflow: hidden;
 }
 </style>

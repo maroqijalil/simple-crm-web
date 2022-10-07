@@ -14,8 +14,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
-
 interface Props {
   title: string;
 }
