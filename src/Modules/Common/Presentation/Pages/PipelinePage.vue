@@ -1,5 +1,5 @@
 <template>
-  <PageComponent title="CRM Pipeline">
+  <PageComponent title="Simple CRM">
     <div
       class="flex flex-col gap-4"
       :style="{ height: `${containerHeight}px` }"
@@ -7,9 +7,11 @@
     >
       <h1 class="font-bold">Product Pipeline</h1>
 
-      <div class="flex gap-4 overflow-y-scroll grow">
+      <div class="gap-4 overflow-y-scroll grow grid grid-cols-5">
         <BoardComponent section="new" />
         <BoardComponent section="check" />
+        <BoardComponent section="rejected" />
+        <BoardComponent section="accepted" />
       </div>
     </div>
   </PageComponent>

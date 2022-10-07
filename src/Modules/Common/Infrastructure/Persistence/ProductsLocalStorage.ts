@@ -1,7 +1,22 @@
+import type { SectionType } from "../../Domain/Models/ProductModel";
 import type ProductModel from "../../Domain/Models/ProductModel";
 
 export default class ProductsLocalStorage {
   static PRODUCT = "product";
+
+  getAllSection = (section: SectionType): ProductModel[] | null => {
+    try {
+      const json = window.localStorage.getItem(ProductsLocalStorage.PRODUCT);
+      if (json) {
+        const products: ProductModel[] = JSON.parse(json);
+        return products.filter((product) => product.section === section);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+
+    return null;
+  };
 
   getAll = (): ProductModel[] | null => {
     try {

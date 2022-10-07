@@ -64,7 +64,7 @@
 
         <button
           type="submit"
-          @click.prevent="submit"
+          @click="submit"
           class="px-4 py-2 text-white rounded-sm bg-blue-500 hover:bg-blue-700 cursor-pointer transition-all"
         >
           Add
@@ -99,6 +99,7 @@ const inputs: ProductModel = reactive({
 
 const submit = () => {
   new AddProduct().execute(inputs);
+  close();
 };
 </script>
 

@@ -25,9 +25,9 @@ const menus = [
     title: "CRM",
     path: "/",
   },
-  {
-    title: "Products",
-    path: "/products",
-  },
+  // {
+  //   title: "Products",
+  //   path: "/products",
+  // },
 ];
 </script>

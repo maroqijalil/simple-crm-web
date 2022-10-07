@@ -4,15 +4,15 @@
     class="bg-white px-4 py-2 flex flex-col gap-1 rounded-md cursor-grab shadow-sm"
     draggable="true"
   >
-    <h2>Product</h2>
+    <h2>{{ product.name }}</h2>
 
-    <div class="rounded-sm w-fit px-2 py-0.5 category">
-      <p class="text-sm">Category</p>
+    <div class="bg-blue-300 rounded-sm w-fit px-2 py-0.5 category">
+      <p class="text-sm">{{ product.category }}</p>
     </div>
 
     <div class="flex gap-2 text-xs">
-      <p>Stock</p>
-      <p>Price</p>
+      <p>{{ product.stock }}</p>
+      <p>Rp. {{ product.price }}</p>
     </div>
   </div>
 </template>
