@@ -2,10 +2,12 @@
   <div class="max-w-xs w-full h-fit">
     <div class="sticky top-0 bg-white shadow-sm">
       <div
-        class="px-4 pt-4 pb-2 bg-gray-100 rounded-tr-lg rounded-tl-lg"
+        class="px-4 pt-4 pb-2 bg-gray-100 rounded-tr-lg rounded-tl-lg flex justify-between"
         ref="headerRef"
       >
         <h2>New Entry</h2>
+
+        <PlusIcon class="w-5 h-5 cursor-pointer" />
       </div>
     </div>
 
@@ -19,6 +21,7 @@
 
 <script setup lang="ts">
 import BoardItemComponent from "./BoardItemComponent.vue";
+import PlusIcon from "../../Assets/PlusIcon.vue";
 </script>
 
 <style scoped>
