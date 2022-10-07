@@ -8,8 +8,8 @@
       <h1 class="font-bold">Product Pipeline</h1>
 
       <div class="flex gap-4 overflow-y-scroll grow">
-        <BoardComponent />
-        <BoardComponent />
+        <BoardComponent section="new" />
+        <BoardComponent section="check" />
       </div>
     </div>
   </PageComponent>
@@ -19,6 +19,7 @@
 import PageComponent from "@/Modules/Common/Presentation/Components/Layouts/PageComponent.vue";
 import BoardComponent from "../Components/Views/BoardComponent.vue";
 import { ref, onMounted } from "vue";
+import AddProductModalComponent from "../Components/Modals/AddProductModalComponent.vue";
 
 const containerHeight = ref<number>(window.innerHeight);
 const containerRef = ref<Element | null>(null);
@@ -30,6 +31,6 @@ const updateHeight = () => {
 onMounted(() => {
   updateHeight();
 
-  window.addEventListener('resize', updateHeight);
+  window.addEventListener("resize", updateHeight);
 });
 </script>

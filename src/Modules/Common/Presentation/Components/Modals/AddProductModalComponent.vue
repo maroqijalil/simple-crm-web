@@ -79,18 +79,22 @@ import InputLabelComponent from "../Inputs/InputLabelComponent.vue";
 import { reactive, watch } from "vue";
 import type ProductModel from "@/Modules/Common/Domain/Models/ProductModel";
 import AddProduct from "@/Modules/Common/Application/UseCases/AddProduct";
+import type { SectionType } from "@/Modules/Common/Domain/Models/ProductModel";
 
 interface Props {
+  section: SectionType;
   close: () => void;
 }
 
-defineProps<Props>();
+const props = defineProps<Props>();
 
 const inputs: ProductModel = reactive({
+  id: Date.now(),
   name: "",
   category: "",
   stock: 0,
   price: 0,
+  section: props.section,
 });
 
 const submit = () => {
