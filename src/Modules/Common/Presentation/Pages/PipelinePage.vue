@@ -7,7 +7,7 @@
     >
       <h1 class="font-bold">Product Pipeline</h1>
 
-      <div class="gap-4 overflow-y-scroll grow grid grid-cols-5">
+      <div class="gap-4 overflow-y-scroll grow grid grid-cols-5 auto-rows-fr">
         <BoardComponent section="new" />
         <BoardComponent section="check" />
         <BoardComponent section="rejected" />
